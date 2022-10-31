@@ -25,7 +25,7 @@ const Home = () => {
       if(text){
         dispatch(addMessages({user: user, text: text}))
         setText("")
-        Location.reload()
+        // Location.reload()
         
         
         
@@ -39,14 +39,15 @@ const Home = () => {
   useEffect(() => {
 
       setUpdateMessages([...messages])
+      window.addEventListener("storage", () => console.log("Just a random word"))
       
 
-  }, [messages, updateMessages])
+  }, [messages])
 
 
   
 
-  console.log(user)
+  // console.log(user)
   
   return (
     <div className="message-board">
